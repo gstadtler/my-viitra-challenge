@@ -16,6 +16,19 @@ const Dashboard = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
 
+  // gstadtler
+  useEffect(() => {
+    async function handleListFood() {
+      try {
+        const response = await api.get("/foods");
+        setFoods(response.data);
+      } catch (err) {
+        console.log(err);
+      };
+    };
+    handleListFood();
+  },[]);
+
   async function handleAddFood(food) {
     try {
       // TODO ADD A NEW FOOD PLATE TO THE API
