@@ -14,7 +14,10 @@ const ModalEditFood = ({
   const formRef = useRef(null);
 
   function handleSubmit(data) {
-    // EDIT A FOOD PLATE AND CLOSE THE MODAL
+    // EDIT A FOOD PLATE AND CLOSE THE MODAL - done
+    const editedFoodPlate = data;
+    handleUpdateFood(editedFoodPlate);
+    setIsOpen(!isOpen);
   }
 
   return (
@@ -23,8 +26,8 @@ const ModalEditFood = ({
         <h1>Editar Prato</h1>
         <Input name="image" placeholder="Cole o link aqui" />
 
-        <Input name="name" placeholder="Ex: Moda Italiana" />
-        <Input name="price" placeholder="Ex: 19.90" />
+        <Input name="name" placeholder="Ex: Moda Italiana" required />
+        <Input name="price" placeholder="Ex: 19.90" required />
 
         <Input name="description" placeholder="Descrição" />
 

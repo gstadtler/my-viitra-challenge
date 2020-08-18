@@ -11,8 +11,10 @@ const Food = ({ food, handleDelete, handleEditFood }) => {
     // TODO UPDATE STATUS (available)
   }
 
-  function setEditingFood() {
-    // TODO - SET THE ID OF THE CURRENT ITEM TO THE EDITING FOOD AND OPEN MODAL
+  function setEditingFood(id) {
+    // TODO - SET THE ID OF THE CURRENT ITEM TO THE EDITING FOOD AND OPEN MODAL - done
+    const currentFoodId = id;
+    handleEditFood(currentFoodId);
   }
 
   return (
@@ -32,7 +34,7 @@ const Food = ({ food, handleDelete, handleEditFood }) => {
           <button
             type="button"
             className="icon"
-            onClick={() => setEditingFood()}
+            onClick={() => setEditingFood(food.id)}
           >
             <FiEdit3 size={20} />
           </button>

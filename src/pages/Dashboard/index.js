@@ -16,9 +16,9 @@ const Dashboard = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
 
-  // gstadtler
+  // TO LOAD ALL THE FOOD PLATES IN THE API - done
   useEffect(() => {
-    async function handleListFood() {
+    async function LoadFoods() {
       try {
         const response = await api.get("/foods");
         setFoods(response.data);
@@ -26,28 +26,33 @@ const Dashboard = () => {
         console.log(err);
       };
     };
-    handleListFood();
+    LoadFoods();
   },[]);
 
-  //gstadtler
   async function handleAddFood(food) {
-    // TODO ADD A NEW FOOD PLATE TO THE API
+    // TODO ADD A NEW FOOD PLATE TO THE API - done
     try {
       const response = await api.post("/foods", food);
-      //console.log(response);
+      setFoods([...foods, response.data]);
     } catch(err) {
       console.log(err);
     }
   }
 
   async function handleUpdateFood(food) {
-    // TODO UPDATE A FOOD PLATE ON THE API
+    // TODO UPDATE A FOOD PLATE ON THE API - done
+    try{
+      const response = await api.put(`/foods/${editingFood}`, food);
+    } catch(err) {
+      console.log(err);
+    }
   }
 
   async function handleDeleteFood(id) {
-    // TODO DELETE A FOOD PLATE FROM THE API
+    // TODO DELETE A FOOD PLATE FROM THE API - done
     try {
-      const response = await api.delete(`/foods${id}`)
+      await api.delete(`/foods/${id}`)
+      setFoods(foods.filter(food => food.id !== id));
     } catch(err) {
       console.log(err);
     }
@@ -61,8 +66,10 @@ const Dashboard = () => {
     setEditModalOpen(!editModalOpen);
   }
 
-  function handleEditFood(food) {
-    // TODO SET THE CURRENT EDITING FOOD ID IN THE STATE
+  function handleEditFood(id) {
+    // TODO SET THE CURRENT EDITING FOOD ID IN THE STATE - done
+    setEditingFood(id);
+    toggleEditModal();
   }
 
   return (
