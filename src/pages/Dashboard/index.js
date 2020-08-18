@@ -22,17 +22,20 @@ const Dashboard = () => {
       try {
         const response = await api.get("/foods");
         setFoods(response.data);
-      } catch (err) {
+      } catch(err) {
         console.log(err);
       };
     };
     handleListFood();
   },[]);
 
+  //gstadtler
   async function handleAddFood(food) {
+    // TODO ADD A NEW FOOD PLATE TO THE API
     try {
-      // TODO ADD A NEW FOOD PLATE TO THE API
-    } catch (err) {
+      const response = await api.post("/foods", food);
+      //console.log(response);
+    } catch(err) {
       console.log(err);
     }
   }
@@ -43,6 +46,11 @@ const Dashboard = () => {
 
   async function handleDeleteFood(id) {
     // TODO DELETE A FOOD PLATE FROM THE API
+    try {
+      const response = await api.delete(`/foods${id}`)
+    } catch(err) {
+      console.log(err);
+    }
   }
 
   function toggleModal() {

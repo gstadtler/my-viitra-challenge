@@ -29,6 +29,20 @@
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food3.png",
       "quantity": 5,
       "timeToCook": "20min"
+    },
+    {
+      "image": "imagem de carne",
+      "name": "Carne Grelhada",
+      "price": "50",
+      "description": "Carne grelhada ao ponto",
+      "id": 4
+    },
+    {
+      "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food3.png",
+      "name": "Camacarrão",
+      "price": "33.50",
+      "description": "Macarrão com camarão frito",
+      "id": 5
     }
   ]
 }

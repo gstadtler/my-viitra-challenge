@@ -4,12 +4,16 @@ import { FiCheckSquare } from 'react-icons/fi';
 import { Form } from './styles';
 import Modal from '../Modal';
 import Input from '../Input';
+//import Food from '../Food';
 
 const ModalAddFood = ({ isOpen, setIsOpen, handleAddFood }) => {
   const formRef = useRef(null);
 
   function handleSubmit(data) {
     // TODO ADD A NEW FOOD AND CLOSE THE MODAL
+    const newFood = data;
+    setIsOpen(!isOpen);
+    handleAddFood(newFood);
   }
 
   return (
@@ -22,7 +26,7 @@ const ModalAddFood = ({ isOpen, setIsOpen, handleAddFood }) => {
         <Input name="price" placeholder="Ex: 19.90" />
 
         <Input name="description" placeholder="Descrição" />
-        <button>
+        <button type="submit">
           <p className="text">Adicionar Prato</p>
           <div className="icon">
             <FiCheckSquare size={24} />
