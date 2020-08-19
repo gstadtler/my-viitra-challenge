@@ -43,6 +43,13 @@
       "price": "40.00",
       "description": "Macarrão com ervas",
       "id": 6
+    },
+    {
+      "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "name": "Iscas de frango",
+      "price": "29.90",
+      "description": "Macarrão ao sugo com iscas de frango",
+      "id": 7
     }
   ]
 }
