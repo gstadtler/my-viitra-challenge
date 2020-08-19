@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useRef } from 'react';
 
 import { FiCheckSquare } from 'react-icons/fi';
 import { Form } from './styles';
@@ -30,6 +30,8 @@ const ModalEditFood = ({
         <Input name="price" placeholder="Ex: 19.90" required />
 
         <Input name="description" placeholder="Descrição" />
+        <Input name="quantity" placeholder="Quantidade" />
+        <Input name="timeToCook" placeholder="Tempo de preparo" />
 
         <button type="submit">
           <div className="text">Editar Prato</div>

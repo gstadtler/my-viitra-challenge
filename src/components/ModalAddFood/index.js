@@ -25,6 +25,9 @@ const ModalAddFood = ({ isOpen, setIsOpen, handleAddFood }) => {
         <Input name="price" placeholder="Ex: 19.90" required />
 
         <Input name="description" placeholder="Descrição" />
+        <Input name="quantity" placeholder="Quantidade" />
+        <Input name="timeToCook" placeholder="Tempo de preparo" />
+
         <button type="submit">
           <p className="text">Adicionar Prato</p>
           <div className="icon">
