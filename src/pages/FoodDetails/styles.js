@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-  border-radius: 8px;
+  background: #fff;
   border: 0;
+  padding: 5px;
   display: flex;
   align-items: center;
 
@@ -10,16 +11,22 @@ export const Button = styled.button`
     color: #39b100;
     margin-right: 5px;
   }
+
   .text {
     font-weight: 600;
     color: #3d3d4d;
+    transition: background 0.2s;
+  }
+
+  .text:hover {
+    background: #90EE90;
   }
 
 `;
 export const Container = styled.div`
   background: #f0f0f5;
   border-radius: 8px;
-  width: max-content;
+  width: fit-content;
   margin: auto;
   text-align: center;
 

@@ -24,7 +24,7 @@ const FoodDetails = (props) => {
 
   return (
     <>
-      <Button>
+      <Button onClick={() => props.history.push('/')}>
         <div className="icon">
           <FiHome size={20} />
         </div>
@@ -40,8 +40,12 @@ const FoodDetails = (props) => {
           <p className="price">
             R$ <b>{food.price}</b>
           </p>
-          <p>Quantidade: {food.quantity}</p>
-          <p>Tempo de preparo: {food.timeToCook}</p>
+          <p>
+            Quantidade: {food.quantity}
+          </p>
+          <p>
+            Tempo de preparo: {food.timeToCook}
+          </p>
         </section>
       </Container>
     </>
