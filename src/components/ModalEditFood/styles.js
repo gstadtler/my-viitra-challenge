@@ -10,11 +10,11 @@ export const Form = styled(Unform)`
     font-weight: 600;
     font-size: 36px;
     line-height: 36px;
-    margin-bottom: 40px;
+    margin: 10px 0 20px;
   }
 
   button {
-    margin-top: 48px;
+    margin-top: 28px;
     align-self: flex-end;
   }
 
