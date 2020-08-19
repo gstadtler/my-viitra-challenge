@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import Header from '../../components/Header';
 
 import api from '../../services/api';
@@ -42,7 +41,7 @@ const Dashboard = () => {
   async function handleUpdateFood(food) {
     // TODO UPDATE A FOOD PLATE ON THE API - done
     try{
-      const response = await api.put(`/foods/${editingFood}`, food);
+      await api.put(`/foods/${editingFood}`, food);
     } catch(err) {
       console.log(err);
     }
