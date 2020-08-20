@@ -11,22 +11,27 @@ import { FoodsContainer } from './styles';
 
 const Dashboard = () => {
   const [foods, setFoods] = useState([]);
+  const [foodsListIsUpdated, setFoodsListIsUpdated] = useState(true);
   const [editingFood, setEditingFood] = useState();
   const [modalOpen, setModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
 
   // TO LOAD ALL THE FOOD PLATES IN THE API - done
   useEffect(() => {
+    let mounted = true;
     async function LoadFoods() {
       try {
         const response = await api.get("/foods");
+        if(mounted){
         setFoods(response.data);
+        }
       } catch(err) {
         console.log(err);
       };
     };
     LoadFoods();
-  },[]);
+    return () => mounted = false;
+  },[foodsListIsUpdated]);
 
   async function handleAddFood(food) {
     // TODO ADD A NEW FOOD PLATE TO THE API - done
@@ -40,8 +45,9 @@ const Dashboard = () => {
 
   async function handleUpdateFood(food) {
     // TODO UPDATE A FOOD PLATE ON THE API - done
-    try{
-      await api.put(`/foods/${editingFood}`, food);
+    try {
+      await api.put(`/foods/${editingFood.id}`, food);
+      setFoodsListIsUpdated(!foodsListIsUpdated);
     } catch(err) {
       console.log(err);
     }
@@ -65,10 +71,9 @@ const Dashboard = () => {
     setEditModalOpen(!editModalOpen);
   }
 
-  function handleEditFood(id) {
+  function handleEditFood(food) {
     // TODO SET THE CURRENT EDITING FOOD ID IN THE STATE - done
-    setEditingFood(id);
-    toggleEditModal();
+    setEditingFood(food);
   }
 
   return (
@@ -94,6 +99,7 @@ const Dashboard = () => {
               food={food}
               handleDelete={handleDeleteFood}
               handleEditFood={handleEditFood}
+              toggleEditModal={toggleEditModal}
             />
           ))}
       </FoodsContainer>
