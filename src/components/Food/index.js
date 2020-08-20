@@ -5,7 +5,7 @@ import { FiEdit3, FiTrash } from 'react-icons/fi';
 
 import { Container } from './styles';
 
-const Food = ({ food, handleDelete, handleEditFood }) => {
+const Food = ({ food, handleDelete, handleEditFood, toggleEditModal }) => {
   const [isAvailable, setIsAvailable] = useState(food.available);
 
   async function toggleAvailable() {
@@ -13,10 +13,11 @@ const Food = ({ food, handleDelete, handleEditFood }) => {
     setIsAvailable(!isAvailable);
   }
 
-  function setEditingFood(id) {
+  function setEditingFood(food) {
     // TODO - SET THE ID OF THE CURRENT ITEM TO THE EDITING FOOD AND OPEN MODAL - done
-    const currentFoodId = id;
-    handleEditFood(currentFoodId);
+    const currentFood = food;
+    handleEditFood(currentFood);
+    toggleEditModal();
   }
 
   return (
@@ -38,7 +39,7 @@ const Food = ({ food, handleDelete, handleEditFood }) => {
           <button
             type="button"
             className="icon"
-            onClick={() => setEditingFood(food.id)}
+            onClick={() => setEditingFood(food)}
           >
             <FiEdit3 size={20} />
           </button>

@@ -20,7 +20,7 @@ const FoodDetails = (props) => {
       }
     };
     LoadFood();
-  },[]);
+  },[foodId]);
 
   return (
     <>

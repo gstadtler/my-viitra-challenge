@@ -11,14 +11,14 @@
       "timeToCook": "30min"
     },
     {
-      "id": 2,
-      "name": "Veggie",
-      "description": "Macarrão com pimentão, ervilha e ervas finas colhidas no himalaia.",
-      "price": "21.90",
-      "available": true,
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food2.png",
-      "quantity": 2,
-      "timeToCook": "50min"
+      "name": "Veggie",
+      "price": "21.90",
+      "description": "Macarrão com pimentão, ervilha e ervas finas colhidas no himalaia.",
+      "quantity": "2",
+      "timeToCook": "50min",
+      "available": "checked={true}",
+      "id": 2
     },
     {
       "id": 3,
@@ -35,20 +35,29 @@
       "name": "Camacarrão",
       "price": "33.50",
       "description": "Macarrão com camarão frito",
+      "quantity": "60",
+      "timeToCook": "40min",
+      "available": "sim",
       "id": 5
     },
     {
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food2.png",
       "name": "Macarrão vegano",
-      "price": "40.00",
+      "price": "42.00",
       "description": "Macarrão com ervas",
+      "quantity": "25",
+      "timeToCook": "20min",
+      "available": "sim",
       "id": 6
     },
     {
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
-      "name": "Iscas de frango",
-      "price": "29.90",
+      "name": "Iscas de Frango",
+      "price": "31.90",
       "description": "Macarrão ao sugo com iscas de frango",
+      "quantity": "30",
+      "timeToCook": "45min",
+      "available": "sim",
       "id": 7
     }
   ]
